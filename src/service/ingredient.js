@@ -20,6 +20,16 @@ const ingredient = {
         }
     },
 
+    async edit(id, ingredient) {
+        try {
+            const response = await axios
+                .put(`http://127.0.0.1:8000/api/ingredients/${id}`, ingredient)
+            return response.data
+        } catch (err) {
+            return console.log(err)
+        }
+    },
+
     async delete(id) {
         try {
             const response = await axios

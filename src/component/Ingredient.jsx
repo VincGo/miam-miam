@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import ingredient from '../service/ingredient';
 import AddIngredient from './AddIngredient';
 import DeleteIngredient from './DeleteIngredient';
+import EditIngredient from './EditIngredient';
 
 const Ingredient = () => {
     const [ingredients, setingredients] = useState([])
@@ -15,6 +16,7 @@ const Ingredient = () => {
 
     //Ajoute le nouvel ingrédient dans le tableau ingredients
     function newIngredient (data) {
+        console.log(data)
         setingredients(prevArray => [...prevArray, data])
     }
 
@@ -24,14 +26,20 @@ const Ingredient = () => {
         setingredients(newArr)
     }
 
+    function changeData (data) {
+        const updateIngredient = ingredients.map((i) => i.id === data.id ? data : i)
+        setingredients(updateIngredient)
+    }
+
     return (
         <div>
             <h1>Ingredients</h1>
             <AddIngredient newIngredient={newIngredient}/>
             {ingredients && ingredients.map((i) => 
-                <li key={i.id}>
+                <div key={i.id}>
                     {i.name} <DeleteIngredient ingredientId={i.id} ingredientDelete={ingredientDelete}/>
-                </li>
+                     <EditIngredient ingredientData={i} visible={false} editIngredient={changeData}/>
+                </div>
             )}
         </div>
     );
