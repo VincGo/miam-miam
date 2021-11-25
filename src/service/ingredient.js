@@ -1,10 +1,33 @@
 import axios from "axios"
 const ingredient = {
-    get(){
-        return axios
-        .get("http://127.0.0.1:8000/api/ingredients?page=1")
-        .then((response) => response.data['hydra:member'])
-        .catch((err) => console.log(err))
+    async get(){
+        try {
+            const response = await axios
+                .get("http://127.0.0.1:8000/api/ingredients?page=1")
+            return response.data['hydra:member']
+        } catch (err) {
+            return console.log(err)
+        }
+    },
+
+    async add(ingredient) {
+        try {
+            const response = await axios
+                .post("http://127.0.0.1:8000/api/ingredients", ingredient)
+            return response.data
+        } catch (err) {
+            return console.log(err)
+        }
+    },
+
+    async delete(id) {
+        try {
+            const response = await axios
+                .delete(`http://127.0.0.1:8000/api/ingredients/${id}`)
+            return response.data
+        } catch (err) {
+            return console.log(err)
+        }
     }
 }
 
