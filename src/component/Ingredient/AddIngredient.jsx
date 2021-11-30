@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import ingredient from '../service/ingredient';
+import ingredient from '../../service/ingredient';
 
 const AddIngredient = ({newIngredient}) => {
     const addIngredient = useRef()

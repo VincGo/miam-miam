@@ -1,5 +1,5 @@
 import React from 'react';
-import ingredient from '../service/ingredient';
+import ingredient from '../../service/ingredient';
 
 const DeleteIngredient = ({ingredientId, ingredientDelete}) => {
 

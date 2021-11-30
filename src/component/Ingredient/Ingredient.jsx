@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import ingredient from '../service/ingredient';
+import ingredient from '../../service/ingredient';
 import AddIngredient from './AddIngredient';
 import DeleteIngredient from './DeleteIngredient';
 import EditIngredient from './EditIngredient';

@@ -1,5 +1,5 @@
 import React, { useRef, useState } from 'react';
-import ingredient from '../service/ingredient';
+import ingredient from '../../service/ingredient';
 
 const EditIngredient = ({ingredientData, editIngredient}) => {
     const [editMode, setEditMode] = useState(false)

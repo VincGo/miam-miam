@@ -1,0 +1,33 @@
+
+nav {
+    padding: 10px;
+    background-color: #202124;
+    border-bottom: 1px solid #3c4043;
+
+    ol {
+        display: flex;
+        justify-content: space-between;
+    }
+
+    a {
+        text-decoration: none;
+
+        &:first-child {
+            font-size: 32px;
+            color: #a970ff;
+        }
+
+        &:last-child {
+            color: white;
+            background-color: #a970ff;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #a970ff;
+        }
+
+        &:last-child:hover {
+            color: #a970ff;
+            background-color: white;
+        }
+    }
+}
