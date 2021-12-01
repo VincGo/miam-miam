@@ -7,8 +7,8 @@ const NavBar = () => {
     return (
         <nav>
             <ol>
-                <Link to={"/"}>MoviesBoard</Link>
-                <Link to={"/ajout-d-un-film"}>Ajouter un film </Link>
+                <Link to={"/"}>Miam-Miam</Link>
+                <Link to={"/ingredient"}>Ingrédients</Link>
             </ol>
         </nav>
     );

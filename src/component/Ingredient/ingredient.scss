@@ -1,0 +1,30 @@
+.card-ingredient {
+    margin: auto;
+    width: 500px;
+    background-color: var(--light-black);
+}
+
+.add-input {
+    background: var(--black);
+    
+    input, button {
+        background: transparent;
+        border: none;
+        height: 39px;
+    }
+
+    input {
+        width: 77%;
+        margin-left: 20px;
+        color: white;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    button {
+        cursor: pointer;
+        color: #5770ff;
+    }
+}

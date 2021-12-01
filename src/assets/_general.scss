@@ -1,0 +1,30 @@
+:root {
+    --black: #1e2334;
+    --light-black: #2c3049;
+    --light-grey: #3c4043;
+    --blue: #415eff;
+}
+
+/* BORDER */
+.br-5 {
+    border-radius: 5px;
+}
+
+.br-20 {
+    border-radius: 20px;
+}
+
+/* PADDING */
+.p-10 {
+    padding: 10px;
+}
+
+.mb-10 {
+    margin-bottom: 10px;
+}
+
+/* SEPARATOR */
+.separator {
+    border-left: 1px solid var(--light-grey);
+    margin: 0 10px
+}

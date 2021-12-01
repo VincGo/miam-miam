@@ -3,6 +3,7 @@ import ingredient from '../../service/ingredient';
 import AddIngredient from './AddIngredient';
 import DeleteIngredient from './DeleteIngredient';
 import EditIngredient from './EditIngredient';
+import './ingredient.scss'
 
 const Ingredient = () => {
     const [ingredients, setingredients] = useState([])
@@ -34,13 +35,16 @@ const Ingredient = () => {
     return (
         <div>
             <h1>Ingredients</h1>
-            <AddIngredient newIngredient={newIngredient}/>
-            {ingredients && ingredients.map((i) => 
-                <div key={i.id}>
-                    {i.name} <DeleteIngredient ingredientId={i.id} ingredientDelete={ingredientDelete}/>
-                     <EditIngredient ingredientData={i} visible={false} editIngredient={changeData}/>
-                </div>
-            )}
+            <div className="card-ingredient br-5 p-10">
+                <AddIngredient newIngredient={newIngredient}/>
+                {ingredients && ingredients.map((i) => 
+                    <div key={i.id}>
+                        {i.name} 
+                        <EditIngredient ingredientData={i} visible={false} editIngredient={changeData}/>
+                        <DeleteIngredient ingredientId={i.id} ingredientDelete={ingredientDelete}/>
+                    </div>
+                )}
+            </div>
         </div>
     );
 };
