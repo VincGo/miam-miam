@@ -22,17 +22,22 @@ const EditIngredient = ({ingredientData, editIngredient}) => {
 
         swapMode()
     }
-    
+
     return (
         <>
-            {editMode && 
+            {editMode &&
                 <>
                     <input type="text" defaultValue={ingredientData.name} ref={ingredientRef}/>
                     <button onClick={edit}>Valider</button>
                     <button onClick={swapMode}>Retour</button>
                 </>
             }
-            {!editMode && <button onClick={swapMode}>Modifier</button>}
+            {!editMode &&
+                <>
+                    {ingredientData.name}
+                    <button onClick={swapMode}>Modifier</button>
+                </>
+            }
         </>
     );
 };

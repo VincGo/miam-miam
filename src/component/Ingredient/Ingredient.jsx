@@ -39,7 +39,6 @@ const Ingredient = () => {
                 <AddIngredient newIngredient={newIngredient}/>
                 {ingredients && ingredients.map((i) => 
                     <div key={i.id}>
-                        {i.name} 
                         <EditIngredient ingredientData={i} visible={false} editIngredient={changeData}/>
                         <DeleteIngredient ingredientId={i.id} ingredientDelete={ingredientDelete}/>
                     </div>

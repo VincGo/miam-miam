@@ -22,7 +22,7 @@ const AddIngredient = ({newIngredient}) => {
     return (
         <form className="add-input br-20 mb-10">
             <input type="text" ref={addIngredient}/>
-            <span className="separator"></span>
+            <span className="separator" />
             <button onClick={add}>Ajouter</button>
         </form>
     );
