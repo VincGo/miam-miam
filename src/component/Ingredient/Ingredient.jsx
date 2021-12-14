@@ -17,7 +17,6 @@ const Ingredient = () => {
 
     //Ajoute le nouvel ingrédient dans le tableau ingredients
     function newIngredient (data) {
-        console.log(data)
         setingredients(prevArray => [...prevArray, data])
     }
 
@@ -37,7 +36,7 @@ const Ingredient = () => {
             <h1>Ingredients</h1>
             <div className="card-ingredient br-5 p-10">
                 <AddIngredient newIngredient={newIngredient}/>
-                {ingredients && ingredients.map((i) => 
+                {ingredients && ingredients.map((i) =>
                     <div key={i.id}>
                         <EditIngredient ingredientData={i} visible={false} editIngredient={changeData}/>
                         <DeleteIngredient ingredientId={i.id} ingredientDelete={ingredientDelete}/>
