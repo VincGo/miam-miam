@@ -4,6 +4,7 @@ import "../Ingredient/ingredient.scss"
 import AddType from "./AddType";
 import EditType from "./EditType";
 import DeleteType from "./DeleteType";
+import Title from "../Title/Title";
 
 const Type = () => {
     const [types, setTypes] = useState([])
@@ -30,7 +31,7 @@ const Type = () => {
 
     return (
         <div>
-            <h1>Type</h1>
+            <Title title={"Type"} />
             <div className={"card-ingredient br-5 p-10"}>
                 <AddType newType={newType}/>
                 {types && types.map(t =>

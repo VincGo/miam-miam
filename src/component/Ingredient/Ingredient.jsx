@@ -4,6 +4,7 @@ import AddIngredient from './AddIngredient';
 import DeleteIngredient from './DeleteIngredient';
 import EditIngredient from './EditIngredient';
 import './ingredient.scss'
+import Title from "../Title/Title";
 
 const Ingredient = () => {
     const [ingredients, setingredients] = useState([])
@@ -33,7 +34,7 @@ const Ingredient = () => {
 
     return (
         <div>
-            <h1>Ingredients</h1>
+            <Title title={"Ingrédient"}/>
             <div className="card-ingredient br-5 p-10">
                 <AddIngredient newIngredient={newIngredient}/>
                 {ingredients && ingredients.map((i) =>

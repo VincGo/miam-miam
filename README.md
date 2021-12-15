@@ -1,6 +1,8 @@
 [ X ] CRUD Ingredient
 
-[  ] CRUD Type
+[ X ] CRUD Type
+
+[ X ] Component Title
 
 [  ] Style Ingredient + Type
 
