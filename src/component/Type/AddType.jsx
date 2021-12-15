@@ -20,10 +20,12 @@ const AddType = ({newType}) => {
     }
 
     return (
-        <form className="add-input br-20 mb-10">
+        <form className="form-input br-20 mb-10 d-flex justify-space-between">
             <input type="text" ref={addType}/>
-            <span className="separator" />
-            <button onClick={add}>Ajouter</button>
+            <div>
+                <span className="separator" />
+                <button onClick={add} className={"mr-25"}>Ajouter</button>
+            </div>
         </form>
     );
 };

@@ -10,8 +10,8 @@ const DeleteType = ({typeId, typeData}) => {
     }
 
     return (
-        <button onClick={remove}>
-            X
+        <button onClick={remove} className={"btn color-rose"}>
+            Supprimer
         </button>
     );
 };

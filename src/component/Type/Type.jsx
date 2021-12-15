@@ -3,7 +3,6 @@ import type from "../../service/type";
 import "../Ingredient/ingredient.scss"
 import AddType from "./AddType";
 import EditType from "./EditType";
-import DeleteType from "./DeleteType";
 import Title from "../Title/Title";
 
 const Type = () => {
@@ -31,13 +30,12 @@ const Type = () => {
 
     return (
         <div>
-            <Title title={"Type"} />
-            <div className={"card-ingredient br-5 p-10"}>
+            <Title title={"Type"} titleBg={"bg-green"} titleColor={"color-green"}/>
+            <div className={"form-container br-5 p-10"}>
                 <AddType newType={newType}/>
                 {types && types.map(t =>
-                    <div key={t.id}>
-                        <EditType editType={editType} typeData={t}/>
-                        <DeleteType typeData={deleteType} typeId={t.id}/>
+                    <div key={t.id} className={"d-flex justify-space-between my-10"}>
+                        <EditType editType={editType} typeData={t} removeType={deleteType}/>
                     </div>
                 )}
             </div>

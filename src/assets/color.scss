@@ -1,0 +1,33 @@
+:root {
+  --black: #1e2334;
+  --light-black: #2c3049;
+  --light-grey: #3c4043;
+  --blue: #415eff;
+  --green: #50e2c3;
+  --orange: #ff7c6b;
+  --rose: #ff75b3;
+}
+
+.color-blue {
+  color: var(--blue);
+}
+
+.color-green {
+  color: var(--green);
+}
+
+.color-orange {
+  color: var(--orange);
+}
+
+.color-rose {
+  color: var(--rose);
+}
+
+.bg-blue {
+  background-color: var(--blue);
+}
+
+.bg-green {
+  background-color: var(--green);
+}

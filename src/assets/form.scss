@@ -1,0 +1,36 @@
+.form-container {
+  margin: auto;
+  width: 500px;
+  background-color: var(--light-black);
+}
+
+.form-input {
+  background: var(--black);
+
+  input, button {
+    background: transparent;
+    border: none;
+    height: 39px;
+  }
+
+  input {
+    width: 100%;
+    margin-left: 20px;
+    color: white;
+
+    &:focus {
+      outline: none;
+    }
+  }
+
+  button {
+    cursor: pointer;
+    color: #5770ff;
+  }
+
+  select {
+    background: transparent;
+    border: none;
+    color: #5770ff;
+  }
+}

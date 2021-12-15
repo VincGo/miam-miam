@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import ingredient from '../../service/ingredient';
 import AddIngredient from './AddIngredient';
-import DeleteIngredient from './DeleteIngredient';
 import EditIngredient from './EditIngredient';
 import './ingredient.scss'
 import Title from "../Title/Title";
@@ -34,13 +33,12 @@ const Ingredient = () => {
 
     return (
         <div>
-            <Title title={"Ingrédient"}/>
-            <div className="card-ingredient br-5 p-10">
+            <Title title={"Ingrédient"} titleBg={"bg-blue"} titleColor={"color-blue"}/>
+            <div className="form-container br-5 p-10">
                 <AddIngredient newIngredient={newIngredient}/>
                 {ingredients && ingredients.map((i) =>
-                    <div key={i.id}>
-                        <EditIngredient ingredientData={i} visible={false} editIngredient={changeData}/>
-                        <DeleteIngredient ingredientId={i.id} ingredientDelete={ingredientDelete}/>
+                    <div key={i.id} className={"d-flex justify-space-between my-10"}>
+                        <EditIngredient ingredientData={i} visible={false} editIngredient={changeData} removeIngredient={ingredientDelete}/>
                     </div>
                 )}
             </div>

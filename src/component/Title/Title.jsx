@@ -1,11 +1,11 @@
 import React from 'react';
 import './title.scss'
 
-const Title = ({title}) => {
+const Title = ({title, titleColor, titleBg}) => {
     return (
         <div id={"title"}>
-            <h1 >{title}</h1>
-            <div />
+            <h1 className={titleColor}>{title}</h1>
+            <div className={titleBg}/>
         </div>
     );
 };

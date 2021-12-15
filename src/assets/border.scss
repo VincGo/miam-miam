@@ -1,0 +1,14 @@
+/* BORDER */
+.br-5 {
+  border-radius: 5px;
+}
+
+.br-20 {
+  border-radius: 20px;
+}
+
+/* SEPARATOR */
+.separator {
+  border-left: 1px solid var(--light-grey);
+  margin: 0 10px
+}

@@ -1,7 +1,8 @@
 import React, {useRef, useState} from 'react';
 import type from "../../service/type";
+import DeleteType from "./DeleteType";
 
-const EditType = ({typeData, editType}) => {
+const EditType = ({typeData, editType, removeType}) => {
     const [editMode, setEditMode] = useState(false)
     const typeRef = useRef()
 
@@ -23,19 +24,28 @@ const EditType = ({typeData, editType}) => {
         swapMode()
     }
 
+    function deleteType(data) {
+        removeType(data)
+    }
+
     return (
         <>
             {editMode &&
-                <>
+                <div className={"d-flex justify-space-between w-100 form-input br-20"}>
                     <input type="text" defaultValue={typeData.name} ref={typeRef}/>
-                    <button onClick={edit}>Valider</button>
-                    <button onClick={swapMode}>Retour</button>
-                </>
+                    <>
+                        <button onClick={edit}>Valider</button>
+                        <button onClick={swapMode} className={"mr-25"}>Retour</button>
+                    </>
+                </div>
             }
             {!editMode &&
                 <>
-                    {typeData.name}
-                    <button onClick={swapMode}>Modifier</button>
+                    <span className={"color-blue"}>{typeData.name}</span>
+                    <div>
+                        <button onClick={swapMode} className={"btn color-orange"}>Modifier</button>
+                        <DeleteType typeData={deleteType} typeId={typeData.id}/>
+                    </div>
                 </>
             }
         </>

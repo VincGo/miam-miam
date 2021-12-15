@@ -10,8 +10,8 @@ const DeleteIngredient = ({ingredientId, ingredientDelete}) => {
     }
 
     return (
-        <button onClick={remove}>
-            X
+        <button onClick={remove} className={"btn color-rose"}>
+            Supprimer
         </button>
     );
 };

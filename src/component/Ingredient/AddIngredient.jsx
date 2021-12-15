@@ -29,15 +29,17 @@ const AddIngredient = ({newIngredient}) => {
     }
 
     return (
-        <form className="add-input br-20 mb-10">
+        <form className="form-input br-20 mb-10 d-flex justify-space-between">
             <input type="text" ref={addIngredient}/>
             <select name="type" id="type" ref={addType}>
                 {types && types.map(t =>
                     <option key={t.id} value={t['@id']}>{t.name}</option>
                 )}
             </select>
-            <span className="separator" />
-            <button onClick={add}>Ajouter</button>
+            <div>
+                <span className="separator" />
+                <button onClick={add} className={"mr-25"}>Ajouter</button>
+            </div>
         </form>
     );
 };
