@@ -7,27 +7,44 @@ nav {
     ol {
         display: flex;
         justify-content: space-between;
+
+        div > a{
+            margin-right: 10px;
+            
+            &:first-child {
+                color: white;
+                background-color: var(--blue);
+                padding: 10px;
+                border-radius: 5px;
+                border: 1px solid var(--blue);
+            }
+
+            &:first-child:hover {
+                color: var(--blue);
+                background-color: white;
+            }
+
+            &:last-child {
+                color: white;
+                background-color: var(--green);
+                padding: 10px;
+                border-radius: 5px;
+                border: 1px solid var(--green);
+            }
+
+            &:last-child:hover {
+                color: var(--green);
+                background-color: white;
+            }
+        }
     }
 
     a {
         text-decoration: none;
-
-        &:first-child {
-            font-size: 32px;
-            color: var(--blue);
-        }
-
-        &:last-child {
-            color: white;
-            background-color: var(--blue);
-            padding: 10px;
-            border-radius: 5px;
-            border: 1px solid var(--blue);
-        }
-
-        &:last-child:hover {
-            color: var(--blue);
-            background-color: white;
-        }
     }
+}
+
+#logo {
+    font-size: 32px;
+    color: var(--blue);
 }
