@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import ingredient from '../../service/ingredient';
 import AddIngredient from './AddIngredient';
 import EditIngredient from './EditIngredient';
-import './ingredient.scss'
 import Title from "../Title/Title";
 
 const Ingredient = () => {

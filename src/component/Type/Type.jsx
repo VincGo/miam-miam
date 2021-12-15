@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import type from "../../service/type";
-import "../Ingredient/ingredient.scss"
 import AddType from "./AddType";
 import EditType from "./EditType";
 import Title from "../Title/Title";
