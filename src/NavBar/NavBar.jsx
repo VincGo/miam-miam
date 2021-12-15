@@ -11,6 +11,7 @@ const NavBar = () => {
                 <div id={"navbar-link"}>
                     <Link to={"/ingredient"}>Ingrédients</Link>
                     <Link to={"/type"}>Type</Link>
+                    <Link to={"/recette"}>Recette</Link>
                 </div>
             </ol>
         </nav>

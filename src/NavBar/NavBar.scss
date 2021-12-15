@@ -1,8 +1,6 @@
-
 nav {
     padding: 10px;
     background-color: var(--light-black);
-    border-bottom: 1px solid var(--blue);
 
     ol {
         display: flex;
@@ -12,30 +10,17 @@ nav {
             margin-right: 10px;
             
             &:first-child {
-                color: white;
-                background-color: var(--blue);
-                padding: 10px;
-                border-radius: 5px;
-                border: 1px solid var(--blue);
-            }
-
-            &:first-child:hover {
                 color: var(--blue);
-                background-color: white;
             }
 
-            &:last-child {
-                color: white;
-                background-color: var(--green);
-                padding: 10px;
-                border-radius: 5px;
-                border: 1px solid var(--green);
-            }
-
-            &:last-child:hover {
+            &:nth-child(2) {
                 color: var(--green);
-                background-color: white;
             }
+
+            &:last-child{
+                color: var(--orange);
+            }
+
         }
     }
 
