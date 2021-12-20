@@ -12,6 +12,16 @@ const crud = {
         }
     },
 
+    async getSingle(entity, id) {
+        try {
+            const response = await axios
+                .get(`${process.env.REACT_APP_API}/${entity}/${id}`)
+            return response.data
+        } catch (err) {
+            console.error(err)
+        }
+    },
+
     async add(entity, data) {
         try {
             const response = await axios
