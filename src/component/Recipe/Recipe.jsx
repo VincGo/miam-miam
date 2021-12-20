@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import Title from "../Title/Title";
 import crud from "../../service/crud";
+import DeleteRecipe from "./DeleteRecipe";
 
 const Recipe = () => {
     const [recipe, setRecipe] = useState([])
@@ -11,19 +12,10 @@ const Recipe = () => {
             .catch(err => console.error(err))
     }, [])
 
-    // function newRecipe(data) {
-    //     setRecipe(prevState => [...prevState, data])
-    // }
-    //
-    // function editRecipe(data) {
-    //     const updateRecipe = recipe.map(i => i.id === data.id ? data : i)
-    //     setRecipe(updateRecipe)
-    // }
-    //
-    // function deleteRecipe(id) {
-    //     const arr = recipe.filter(i => i.id !== id)
-    //     setRecipe(arr)
-    // }
+    function deleteRecipe (id) {
+        const arr = recipe.filter(recipe => recipe.id !== id)
+        setRecipe(arr)
+    }
 
     return (
         <div>
@@ -38,6 +30,7 @@ const Recipe = () => {
                         <a href={`recette/edit/${r.id}`} className={"color-blue"}>
                             modifier
                         </a>
+                        <DeleteRecipe recipeId={r.id} recipeData={deleteRecipe}/>
                     </li>
                 )}
             </div>
