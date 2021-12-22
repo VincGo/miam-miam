@@ -18,6 +18,7 @@ const SelectRecipe = ({day, name, handleChange}) => {
         <>
             <label htmlFor={name} className={"color-rose"}>{day}: </label>
             <select name={name} id={name} onChange={getNameAndValue}>
+                <option value={null}> -- Recettes -- </option>
                 {recipe && recipe.map(recipe =>
                     <option key={recipe.id} value={recipe["@id"]}>
                         {recipe.name}

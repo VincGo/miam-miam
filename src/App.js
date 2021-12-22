@@ -8,6 +8,7 @@ import ShowRecipe from "./component/Recipe/ShowRecipe";
 import EditRecipe from "./component/Recipe/EditRecipe";
 import Menu from "./component/Menu/Menu";
 import AddMenu from "./component/Menu/AddMenu";
+import ShowMenu from "./component/Menu/ShowMenu";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path={"/recette/edit/:id"} element={<EditRecipe />}/>
           <Route path={"/menu"} element={<Menu />}/>
           <Route path={"/menu/ajout"} element={<AddMenu />}/>
+          <Route path={"/menu/:id"} element={<ShowMenu />}/>
         </Routes>
       </main>
     </BrowserRouter>
