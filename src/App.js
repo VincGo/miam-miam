@@ -6,6 +6,8 @@ import Recipe from "./component/Recipe/Recipe";
 import AddRecipe from "./component/Recipe/AddRecipe";
 import ShowRecipe from "./component/Recipe/ShowRecipe";
 import EditRecipe from "./component/Recipe/EditRecipe";
+import Menu from "./component/Menu/Menu";
+import AddMenu from "./component/Menu/AddMenu";
 
 function App() {
   return (
@@ -19,6 +21,8 @@ function App() {
           <Route path={"/recette/ajout"} element={<AddRecipe/>}/>
           <Route path={"/recette/:id"} element={<ShowRecipe />}/>
           <Route path={"/recette/edit/:id"} element={<EditRecipe />}/>
+          <Route path={"/menu"} element={<Menu />}/>
+          <Route path={"/menu/ajout"} element={<AddMenu />}/>
         </Routes>
       </main>
     </BrowserRouter>

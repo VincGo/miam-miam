@@ -10,10 +10,14 @@ nav {
             margin-right: 10px;
             
             &:first-child {
-                color: var(--blue);
+                color: var(--rose);
             }
 
             &:nth-child(2) {
+                color: var(--blue);
+            }
+
+            &:nth-child(3) {
                 color: var(--green);
             }
 
@@ -23,7 +27,6 @@ nav {
 
         }
     }
-
     a {
         text-decoration: none;
     }
