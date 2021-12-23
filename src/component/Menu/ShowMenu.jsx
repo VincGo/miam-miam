@@ -17,6 +17,7 @@ const ShowMenu = () => {
     return (
         <div>
             <Title title={<MenuTitle menu={menu}/>} titleBg={"bg-rose"} titleColor={"color-rose"}/>
+            <a href={`/menu/edit/${menu?.id}`}>Modifier le menu</a>
             <table>
                 <thead>
                     <tr>

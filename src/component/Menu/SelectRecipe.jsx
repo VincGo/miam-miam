@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import crud from "../../service/crud";
 
-const SelectRecipe = ({day, name, handleChange}) => {
+const SelectRecipe = ({day, name, handleChange, defaultValue}) => {
     const [recipe, setRecipe] = useState([])
 
     useEffect(() => {
@@ -11,20 +11,24 @@ const SelectRecipe = ({day, name, handleChange}) => {
     }, [])
 
     function getNameAndValue(e) {
+        for (let i = 0; i < recipe.length; i++) {
+            if (recipe[i].name === e.target.value) {
+                e.target.dataset.id = recipe[i]['@id']
+            }
+        }
         handleChange(e)
     }
 
     return (
         <>
             <label htmlFor={name} className={"color-rose"}>{day}: </label>
-            <select name={name} id={name} onChange={getNameAndValue}>
-                <option value={null}> -- Recettes -- </option>
+            <input type="text" list={"menuRecette"} placeholder={"Choisir une recette"} name={name}
+                   onChange={getNameAndValue} autoComplete={"off"} data-id={""} defaultValue={defaultValue}/>
+            <datalist id={"menuRecette"}>
                 {recipe && recipe.map(recipe =>
-                    <option key={recipe.id} value={recipe["@id"]}>
-                        {recipe.name}
-                    </option>
+                    <option key={recipe.id} value={recipe.name}/>
                 )}
-            </select>
+            </datalist>
         </>
     );
 };

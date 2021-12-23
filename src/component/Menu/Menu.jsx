@@ -17,9 +17,11 @@ const Menu = () => {
             <Title title={"Menu"} titleColor={"color-rose"} titleBg={"bg-rose"}/>
             <a href={"menu/ajout"}>Ajouter un menu</a>
             {menu && menu.map(menu =>
-                <a href={`menu/${menu && menu.id}`} key={menu.id}>
-                    <MenuTitle menu={menu} key={menu.id}/>
-                </a>
+                <li  key={menu.id}>
+                    <a href={`menu/${menu && menu.id}`}>
+                        <MenuTitle menu={menu} key={menu.id}/>
+                    </a>
+                </li>
             )}
         </div>
     );
