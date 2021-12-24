@@ -10,7 +10,9 @@ const EditMenu = () => {
     const [menu, setMenu] = useState()
 
     function edit(data) {
-        console.log(data)
+        crud.edit("menus", id, data)
+            .then(() => console.log("Success"))
+            .catch(err => console.error(err))
     }
 
     useEffect(() => {
