@@ -10,6 +10,8 @@ import Menu from "./component/Menu/Menu";
 import AddMenu from "./component/Menu/AddMenu";
 import ShowMenu from "./component/Menu/ShowMenu";
 import EditMenu from "./component/Menu/EditMenu";
+import List from "./component/Liste/List";
+import ShowList from "./component/Liste/ShowList";
 
 function App() {
   return (
@@ -27,6 +29,8 @@ function App() {
           <Route path={"/menu/ajout"} element={<AddMenu />}/>
           <Route path={"/menu/:id"} element={<ShowMenu />}/>
           <Route path={"/menu/edit/:id"} element={<EditMenu />}/>
+          <Route path={"/liste"} element={<List />}/>
+          <Route path={"/liste/:id"} element={<ShowList />}/>
         </Routes>
       </main>
     </BrowserRouter>

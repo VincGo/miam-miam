@@ -6,6 +6,7 @@
   --green: #50e2c3;
   --orange: #ff7c6b;
   --rose: #ff75b3;
+  --violet: #b86bff;
 }
 
 .color-blue {
@@ -24,6 +25,10 @@
   color: var(--rose);
 }
 
+.color-violet {
+  color: var(--violet)
+}
+
 .bg-blue {
   background-color: var(--blue);
 }
@@ -38,4 +43,8 @@
 
 .bg-rose {
   background-color: var(--rose);
+}
+
+.bg-violet {
+  background-color: var(--violet);
 }
