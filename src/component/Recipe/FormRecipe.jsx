@@ -96,7 +96,7 @@ const FormRecipe = ({dataRecipe, dataEdit}) => {
                         <datalist id={"ingredient"}>
                             <SelectIngredient/>
                         </datalist>
-                        <input type="number" placeholder={"Quantité"} defaultValue={i.quantity} onChange={e => {
+                        <input type="number" placeholder={"Quantité"} value={i.quantity} onChange={e => {
                             const quantity = e.target.value
                             setIngredients(prevState => produce(prevState, v => {
                                 v[index].quantity = parseInt(quantity, 10)
