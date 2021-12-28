@@ -6,28 +6,28 @@ import FormRecipe from "./FormRecipe";
 import {useNavigate} from "react-router-dom";
 
 const EditRecipe = () => {
-    const {id} = useParams()
-    const [recipe, setRecipe] = useState()
-    const navigate = useNavigate()
+  const {id} = useParams()
+  const [recipe, setRecipe] = useState()
+  const navigate = useNavigate()
 
-    function edit(data) {
-        crud.edit("recettes", id, data)
-            .then(() => navigate("/recette"))
-            .catch(err => console.error(err))
-    }
+  function edit(data) {
+    crud.edit("recettes", id, data)
+      .then(() => navigate("/recette"))
+      .catch(err => console.error(err))
+  }
 
-    useEffect(() => {
-        crud.getSingle("recettes", id)
-            .then(data => setRecipe(data))
-            .catch(err => console.error(err))
-    }, [id])
+  useEffect(() => {
+    crud.getSingle("recettes", id)
+      .then(data => setRecipe(data))
+      .catch(err => console.error(err))
+  }, [id])
 
-    return (
-        <div>
-            <Title title={"Modification d'un recette"} titleBg={"bg-orange"} titleColor={"color-orange"}/>
-            <FormRecipe dataEdit={recipe} dataRecipe={edit}/>
-        </div>
-    );
+  return (
+    <div>
+      <Title title={"Modification d'un recette"} titleBg={"bg-orange"} titleColor={"color-orange"}/>
+      <FormRecipe dataEdit={recipe} dataRecipe={edit}/>
+    </div>
+  );
 };
 
 export default EditRecipe;

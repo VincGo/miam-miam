@@ -3,53 +3,53 @@ import type from "../../service/type";
 import DeleteType from "./DeleteType";
 
 const EditType = ({typeData, editType, removeType}) => {
-    const [editMode, setEditMode] = useState(false)
-    const typeRef = useRef()
+  const [editMode, setEditMode] = useState(false)
+  const typeRef = useRef()
 
-    function swapMode() {
-        setEditMode(!editMode)
+  function swapMode() {
+    setEditMode(!editMode)
+  }
+
+  function edit(e) {
+    e.preventDefault()
+
+    const data = {
+      name: typeRef.current.value
     }
 
-    function edit(e) {
-        e.preventDefault()
+    type.edit(typeData.id, data)
+      .then((data) => editType(data))
+      .catch((err) => console.log(err))
 
-        const data = {
-            name: typeRef.current.value
-        }
+    swapMode()
+  }
 
-        type.edit(typeData.id, data)
-            .then((data) => editType(data))
-            .catch((err) => console.log(err))
+  function deleteType(data) {
+    removeType(data)
+  }
 
-        swapMode()
-    }
-
-    function deleteType(data) {
-        removeType(data)
-    }
-
-    return (
+  return (
+    <>
+      {editMode &&
+      <div className={"d-flex justify-space-between w-100 form-input br-20"}>
+        <input type="text" defaultValue={typeData.name} ref={typeRef}/>
         <>
-            {editMode &&
-                <div className={"d-flex justify-space-between w-100 form-input br-20"}>
-                    <input type="text" defaultValue={typeData.name} ref={typeRef}/>
-                    <>
-                        <button onClick={edit}>Valider</button>
-                        <button onClick={swapMode} className={"mr-25"}>Retour</button>
-                    </>
-                </div>
-            }
-            {!editMode &&
-                <>
-                    <span className={"color-blue"}>{typeData.name}</span>
-                    <div>
-                        <button onClick={swapMode} className={"btn color-orange"}>Modifier</button>
-                        <DeleteType typeData={deleteType} typeId={typeData.id}/>
-                    </div>
-                </>
-            }
+          <button onClick={edit}>Valider</button>
+          <button onClick={swapMode} className={"mr-25"}>Retour</button>
         </>
-    );
+      </div>
+      }
+      {!editMode &&
+      <>
+        <span className={"color-blue"}>{typeData.name}</span>
+        <div>
+          <button onClick={swapMode} className={"btn color-orange"}>Modifier</button>
+          <DeleteType typeData={deleteType} typeId={typeData.id}/>
+        </div>
+      </>
+      }
+    </>
+  );
 };
 
 export default EditType;
