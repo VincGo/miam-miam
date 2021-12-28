@@ -3,6 +3,7 @@ import Title from "../Title/Title";
 import {useParams} from "react-router-dom";
 import crud from "../../service/crud";
 import MenuTitle from "./MenuTitle";
+import DeleteMenu from "./DeleteMenu";
 
 const ShowMenu = () => {
   const {id} = useParams()
@@ -18,6 +19,7 @@ const ShowMenu = () => {
     <div>
       <Title title={<MenuTitle menu={menu}/>} titleBg={"bg-rose"} titleColor={"color-rose"}/>
       <a href={`/menu/edit/${menu?.id}`}>Modifier le menu</a>
+      <DeleteMenu />
       <table>
         <thead>
         <tr>
