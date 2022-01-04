@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import crud from "../../service/crud";
 
-const SelectRecipe = ({day, name, handleChange, defaultValue, dataId}) => {
+const SelectRecipe = ({day, name, handleChange, defaultValue, dataId, addList}) => {
   const [recipe, setRecipe] = useState([])
 
   useEffect(() => {
@@ -14,6 +14,7 @@ const SelectRecipe = ({day, name, handleChange, defaultValue, dataId}) => {
     for (let i = 0; i < recipe.length; i++) {
       if (recipe[i].name === e.target.value) {
         e.target.dataset.id = recipe[i]['@id']
+        addList(recipe[i].ingredients)
       }
     }
     handleChange(e)

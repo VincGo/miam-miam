@@ -30,7 +30,7 @@ const FormRecipe = ({dataRecipe, dataEdit}) => {
     const arr = []
     const obj = {
       name: recipe.current.value,
-      ingredientRecettes: arr
+      ingredients: arr
     }
     for (let i = 0; i < recipeIngredient.length; i++) {
       for (let j = 0; j < allIngredient.length; j++) {
@@ -71,7 +71,7 @@ const FormRecipe = ({dataRecipe, dataEdit}) => {
 
   useEffect(() => {
     if (dataEdit) {
-      newArr(dataEdit.ingredientRecettes)
+      newArr(dataEdit.ingredients)
     }
   }, [dataEdit])
 

@@ -1,12 +1,13 @@
 import React from 'react';
 
-const TitleList = ({listDate}) => {
-  const rawDate = new Date(listDate)
-  const date = rawDate.toLocaleDateString('fr')
-
+const TitleList = ({list}) => {
+  const eventStart = new Date( list?.menu?.startDate)
+  const eventEnd = new Date(list?.menu?.endDate)
+  const startDate = eventStart.toLocaleDateString('fr')
+  const endDate = eventEnd.toLocaleDateString('fr')
   return (
     <>
-      {date}
+      {startDate} - {endDate}
     </>
   );
 };

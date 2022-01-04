@@ -18,7 +18,7 @@ const List = () => {
       {list && list.map(l =>
         <li key={l.id}>
           <a href={`/liste/${l.id}`}>
-            <TitleList listDate={l.date}/>
+            <TitleList list={l} />
           </a>
         </li>
       )}

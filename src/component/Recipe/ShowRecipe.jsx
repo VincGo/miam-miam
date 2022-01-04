@@ -17,7 +17,7 @@ const ShowRecipe = () => {
     <div>
       <Title title={recette.name} titleColor={"color-orange"} titleBg={"bg-orange"}/>
       <h2 className={"color-orange"}>Ingrédients: </h2>
-      {recette.ingredientRecettes && recette.ingredientRecettes.map((r, i) =>
+      {recette.ingredients && recette.ingredients.map((r, i) =>
         <li key={i} className={"color-orange"}>{r.ingredient[0].name} ({r.quantity})</li>
       )}
     </div>
