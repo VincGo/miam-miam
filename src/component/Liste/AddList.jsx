@@ -8,14 +8,49 @@ const AddList = ({newIngredientList}) => {
 
   //Ajoute les nouveaux ingrédients dans les tableau showList
   function newIngredient(ingredients) {
-    for (const ingredient of ingredients) {
-      const findIndex = showList.findIndex(i => i.name === ingredient.name)
+    for (let i = 0; i < ingredients.length; i++) {
+      const findIndex = showList.findIndex(item => item.name === ingredients[i].name)
       if (findIndex === -1) {
-        setShowList(prevData => [...prevData, ingredient])
+        setShowList(prevData => [...prevData, ingredients[i]])
       } else {
-        console.log(showList[findIndex], ingredient)
+        //Si deux ingrédients ont le même nom alors on va créer un nouvel ingrédientRecette en ajoutant les deux quantités
+        const firstIngr = parseInt(showList[findIndex].quantity, 10)
+        const secondIngr = parseInt(ingredients[i].quantity, 10)
+        const quantity = firstIngr + secondIngr
+        const obj = {
+          quantity: quantity,
+          ingredient: [ingredients[i].ingredient_id]
+        }
+        const length = ingredients.length
+        addNewIngredient(obj, findIndex, length, i)
       }
     }
+  }
+
+  //Création du nouvel ingrédientRecette
+  function addNewIngredient(data, index, length, i) {
+    crud.add("ingredient_recettes", data)
+      .then(data => {
+        const obj = {
+          id: data['@id'],
+          ingredient_id: data.ingredient[0]['@id'],
+          name: data.ingredient[0].name,
+          quantity: data.quantity
+        }
+        replaceIngredientRecette(obj, index, length, i)
+      })
+      .catch(err => console.error(err))
+  }
+
+  //Change ingredientRecette par le nouveau créer
+  function replaceIngredientRecette(data, index, length, i) {
+    const arr = showList
+    arr[index] = data
+    let n = i + 1
+    if (n === length) {
+      setShowList(prev => [...prev])
+    }
+    return arr
   }
 
   //Retourne un l'objet pour la création d'une nouvelle liste
@@ -41,15 +76,13 @@ const AddList = ({newIngredientList}) => {
       .catch(err => console.error(err))
   }
 
-  useEffect(() => {
-    newIngredient(newIngredientList)
-  }, [newIngredientList])
+  useEffect(() => newIngredient(newIngredientList), [newIngredientList])
 
   return (
     <div>
       {showList.map((p, index) =>
         <p className={"color-rose"} key={index}>
-          {p.name} ({p.quantity}) {p.id}
+          {p.name} ({p.quantity})
         </p>
       )}
       <button onClick={saveList}>
